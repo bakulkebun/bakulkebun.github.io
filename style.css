@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position:relative;
+    margin:0;
+    padding:0;
+    color:#fff;
+    text-shadow: 4px 4px #444;
+    background-color: #ffcc00ff;
+}
+
+img {
+    position:absolute;
+    top:10vh;
+    left:2rem;
+    height:80vh;
+    z-index:-1;
+}
+
+p {
+    font-size:2rem;
+    text-shadow: 1px 1px #444;
+}
+
+
+h1, h2, h3{
+    font-family: "Poppins";
+}
+
+.bigHeader {
+    font-size:8rem;
+    line-height: 8rem;
+    padding:0;
+    margin:0;
+}
+
+.subHeader {
+    font-size: 2rem;
+    line-height:0rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+}
+
+.otherClass {
+    margin:10px;
+}
