@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  font-family: "Poppins", "Arial", "Helvetica", "sans-serif";
+  color: #646464;
+  font-size: 1rem;
+}
+
+.logoContainer {
+  position: absolute;
+  width: 400px;
+  top: 20px;
+  left: 20px;
+}
+.logoContainer img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
