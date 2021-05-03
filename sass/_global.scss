@@ -213,33 +213,19 @@ main {
 
 //////  MAIN CONTENT BACKGROUND ////////////////////
 
-#bg1 {
+.backgroundLayer {
     position:absolute;
     top:0;
     left:0;
-    width:50%;
-    height:auto;
-    z-index:-5;
+    width:100%;
+    height:100%;
+    z-index:-10;
 }
 
-#bg2 {
+.bgImage {
     position:absolute;
-    top:120vh;
-    right:0;
-    width:60%;
-    height:auto;
-    z-index:-5;
-
-}
-
-#bg3 {
-    position:absolute;
-    top:200vh;
-    left:0;
-    width:50%;
-    height:auto;
-    z-index:-5;
-
+    z-index:-10;
+    margin-bottom:2rem;
 }
 
 //////      END MAIN CONTENT BACKGROUND /////////////////////////////////////////
@@ -272,4 +258,9 @@ footer{
 .disabledButton {
     background-color: $primary-color-disabled;
     pointer-events: none;
+}
+
+.hide {
+    visibility:hidden;
+    opacity:0;
 }
