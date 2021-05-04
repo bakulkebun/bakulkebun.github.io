@@ -7,6 +7,7 @@
 }
 
 body {
+  background: linear-gradient(to top, #B2FFFFFF, #B2FFFF33);
   overflow-x: hidden;
   width: 100vw;
   font-family: "Poppins", "Arial", "Helvetica", "sans-serif";
@@ -209,6 +210,7 @@ main {
   position: absolute;
   z-index: -10;
   margin-bottom: 2rem;
+  opacity: 40%;
 }
 
 .lemonLeaf {
@@ -224,6 +226,18 @@ main {
 }
 
 .orangeFruit {
+  opacity: 0;
+}
+
+.avocadoLeaf {
+  opacity: 0;
+}
+
+.avocadoFruit {
+  opacity: 0;
+}
+
+.avocadoFruitBranch {
   opacity: 0;
 }
 

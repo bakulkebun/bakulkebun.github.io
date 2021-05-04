@@ -7,6 +7,7 @@
 }
 
 body {
+    background:linear-gradient(to top,#B2FFFFFF,#B2FFFF33);
   overflow-x: hidden;
   width: 100vw;
   font-family: $primary-font-family;
@@ -35,212 +36,218 @@ header {
 }
 
 .headerTextContainer {
-    position:absolute;
-    top:8.0rem;
-    left:15rem;
-    width:35%;
+  position: absolute;
+  top: 8rem;
+  left: 15rem;
+  width: 35%;
 
-    h1 {
-        font-size:1.5rem;
-        font-weight: 100;
-        line-height: 2.0rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 2rem;
+  }
 }
 
 .bigContactContainer {
-    position:absolute;
-    right:9rem;
-    top:1.5rem;
+  position: absolute;
+  right: 9rem;
+  top: 1.5rem;
 
-    .contactLabel {
-        font-size: 1.2rem;
-    }
+  .contactLabel {
+    font-size: 1.2rem;
+  }
 
-    .contactData {
-        font-size:2.2rem;
-        font-weight: 900;
-    }
+  .contactData {
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
 
-    .contactButton {
-        width:100%;
-        margin-top:1rem;
-        height:2.5rem;
-        background-color: $primary-color-button;
-        border:none;
-        outline:none;
-        border-radius: 0.25rem;
-        font-size: 1.2rem;
-        color:white;
-        transform-origin: center center;
-        cursor:pointer;
-        transition: all 0.20s ease-in-out;
-    }
+  .contactButton {
+    width: 100%;
+    margin-top: 1rem;
+    height: 2.5rem;
+    background-color: $primary-color-button;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    color: white;
+    transform-origin: center center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
 
-    .contactButton:hover {
-        transform: scale(0.98, 0.98);
-        box-shadow: 0 0 20px white,
-        0 0 20px white,
-        0 0 15px $primary-shadow-button;
-    }
+  .contactButton:hover {
+    transform: scale(0.98, 0.98);
+    box-shadow: 0 0 20px white, 0 0 20px white, 0 0 15px $primary-shadow-button;
+  }
 }
 
 //////      END HEADER STYLE /////////////////////////////////////////////////////
 
 /////       MAIN CONTENT BACKGROUND /////////////////////////////////////////////
 main {
-    position:relative;
-    width:100%;
+  position: relative;
+  width: 100%;
 }
 
 ////// PRODUCT CONTAINER //////////////////
 .productContainerBG {
-    position:absolute;
-    top:0;
-    left:0;
-    background-color: silver;
-    width:100%;
-    height:100%;
-    opacity:50%;
-    z-index:-1;
-    border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: silver;
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+  z-index: -1;
+  border-radius: 1rem;
 }
 
 .productContainer {
-    position:relative;
-    width:80%;
-    min-height:35rem;
-    z-index:0;
-    right:0px;
+  position: relative;
+  width: 80%;
+  min-height: 35rem;
+  z-index: 0;
+  right: 0px;
 }
 
 .productGridContainer {
-    padding:2rem;
-    display:flex;
-    flex-direction: row;
-    width:100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .productSpecContainer {
-    display:flex;
-    flex-direction: column;
-    width:40%;
-    height:100%;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
 }
 
 .productDescContainer {
-    display:relative;
-    width:50%;
-    margin-left:3rem;
+  display: relative;
+  width: 50%;
+  margin-left: 3rem;
 }
 
 .productImage {
-    width:100%;
-    height:auto;
+  width: 100%;
+  height: auto;
 }
 
 .label {
-    font-weight: 100;
-    color:$primary-color-highlight;
-    text-align: right;
+  font-weight: 100;
+  color: $primary-color-highlight;
+  text-align: right;
 }
 .data {
-    font-weight: 900;
-    font-size:1.2rem;
+  font-weight: 900;
+  font-size: 1.2rem;
 }
 
 .detailedSpecContainer {
-    margin:2rem 0;
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    column-gap: 1rem;
-    row-gap:1rem;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
 }
 
-
 .orderButton {
-    position:absolute;
-    box-sizing: border-box;
-    width:38%;
-    max-width: 100%;
-    margin-bottom:0;
-    height:40px;
-    border:none;
-    outline:none;
-    background-color:$order-color-button;
-    color:white;
-    font-size:1.2rem;
-    font-weight: 100;
-    border-radius: 5px;
-    transform-origin: center center;
-    transition: all 0.25s;
-    cursor: pointer;
-    bottom:3rem;
+  position: absolute;
+  box-sizing: border-box;
+  width: 38%;
+  max-width: 100%;
+  margin-bottom: 0;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: $order-color-button;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 100;
+  border-radius: 5px;
+  transform-origin: center center;
+  transition: all 0.25s;
+  cursor: pointer;
+  bottom: 3rem;
 }
 
 .orderButton:hover {
-    transform:scale(0.98, 0.98);
-    box-shadow: 0 0 20px white, 
-    0 0 20px white, 
-    0 0 15px $order-color-shadow;
+  transform: scale(0.98, 0.98);
+  box-shadow: 0 0 20px white, 0 0 20px white, 0 0 15px $order-color-shadow;
 }
 
 .productTitle {
-    text-shadow: 0.3rem -0.3rem yellow;
-    font-size:2rem;
+  text-shadow: 0.3rem -0.3rem yellow;
+  font-size: 2rem;
 }
 
 .productNarration {
-    font-size:1.3rem;
-    width:90%;
+  font-size: 1.3rem;
+  width: 90%;
 }
 .productNarration > p {
-    margin-top:1rem;
+  margin-top: 1rem;
 }
-
 
 .contentLayer {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-    height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
-.contentLayer>div {
-    margin-bottom:2rem;
+.contentLayer > div {
+  margin-bottom: 2rem;
 }
-
 
 //////  MAIN CONTENT BACKGROUND ////////////////////
 
 .backgroundLayer {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
 }
 
 .bgImage {
-    position:absolute;
-    z-index:-10;
-    margin-bottom:2rem;
+  position: absolute;
+  z-index: -10;
+  margin-bottom: 2rem;
+  opacity: 40%;
 }
 
-.lemonLeaf{
-    opacity:0;
+.lemonLeaf {
+  opacity: 0;
 }
 
-.lemonFruit{
-    opacity:0;
+.lemonFruit {
+  opacity: 0;
 }
 
 .orangeLeaf {
-    opacity:0;
+  opacity: 0;
 }
 
 .orangeFruit {
+  opacity: 0;
+}
+
+.avocadoLeaf {
+    opacity:0;
+}
+
+.avocadoFruit {
+    opacity:0;
+}
+
+.avocadoFruitBranch {
     opacity:0;
 }
 
@@ -248,23 +255,23 @@ main {
 
 //////      FOOTER //////////////////////////////////////////////////////////////
 
-footer{
-    position:relative;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    height:5rem;
-    background-color: $primary-color-shade;
-    left:0;
-    bottom:0;
+footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5rem;
+  background-color: $primary-color-shade;
+  left: 0;
+  bottom: 0;
 }
 
 .copyrights {
-    position:absolute;
-    font-size:0.85rem;
-    font-weight: 50;
-    color:$primary-color-highlight;
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: 50;
+  color: $primary-color-highlight;
 }
 
 //////      END FOOTER //////////////////////////////////////////////////////////
@@ -272,11 +279,11 @@ footer{
 //////      HELPER CLASS ////////////////////////////////////////////////////////
 
 .disabledButton {
-    background-color: $primary-color-disabled;
-    pointer-events: none;
+  background-color: $primary-color-disabled;
+  pointer-events: none;
 }
 
 .hide {
-    visibility:hidden;
-    opacity:0;
+  visibility: hidden;
+  opacity: 0;
 }

@@ -158,3 +158,56 @@ tlOrange.to(".orangeFruit",{
 },
 "-=0.25"); 
 
+//AVOCADO TREE
+
+const avocadoTree = document.querySelector("#avocadoTree");
+const avocadoVB = avocadoTree.viewBox.baseVal;
+const avocadoVBRatio = avocadoVB.width / avocadoVB.height;
+const avocadoCtrHeight = products[2].offsetHeight;
+const avocadoTreeMaxHeight = avocadoCtrHeight * bgImgMaxHeightFactor;
+const avocadoTreeWidth = avocadoTreeMaxHeight * avocadoVBRatio;
+
+avocadoTree.classList.add("bgImage");
+
+avocadoTree.style.top = products[2].offsetTop + avocadoCtrHeight * topFromCtrFactor;
+avocadoTree.style.left=0;
+
+let tlAvocado = gsap.timeline({
+    scrollTrigger:{
+        trigger: products[2],
+        //markers:true,
+        start:'top center',
+        end:'bottom center',
+        toggleActions:'restart reverse restart reverse'
+    }
+});
+
+
+tlAvocado.to(avocadoTree,{
+    duration:2,
+    width:avocadoTreeWidth,
+    ease:'power1.out'
+});
+
+tlAvocado.to(".avocadoLeaf",{
+    duration:0.25,
+    opacity:100,
+    ease:'bounce',
+    stagger:0.15
+});
+
+tlAvocado.to(".avocadoFruitBranch",{
+    duration:0.25,
+    opacity:100,
+    ease:'bounce',
+},
+"-=0.25");
+
+tlAvocado.to(".avocadoFruit",{
+    duration:0.25,
+    opacity:100,
+    ease:"elastic",
+    stagger:0.25
+},
+"-=0.25"); 
+
