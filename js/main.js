@@ -57,60 +57,104 @@ function isAvocadoInSession() {
 ////// BACKGROUND IMAGE ANIMATION ///////////////////////////
 const bgArea = document.querySelectorAll(".backgroundLayer")[0];
 const products = document.querySelectorAll(".productContainer");
+const lemonTree = document.querySelector("#lemonTree");
 
-const tl = new gsap.timeline();
 
 ///// CREATE BG ELEMENT //////////////////////////
 const bgImage = new Array();
 
-for (i = 1; i < 4; i++) {
-    var newImg = document.createElement("img");
-    newImg.src = `/assets/bgDecor${i}.png`;
-    newImg.classList.add("bgImage");
-    if (i % 2 == 0) {
-        newImg.style.right = 0;
+lemonTree.classList.add("bgImage");
+
+//some register to console
+const topFromCtrFactor = 0.2;
+const bgImgMaxHeightFactor = 1-0.2;
+
+const lemonLeaf = document.querySelectorAll(".lemonLeaf");
+
+
+const lemonVB = lemonTree.viewBox.baseVal;
+const lemonVBRatio = lemonVB.width / lemonVB.height;
+const lemonCtrHeight = products[0].offsetHeight;
+const lemonTreeMaxHeight = lemonCtrHeight * bgImgMaxHeightFactor;
+const lemonTreeWidth = lemonTreeMaxHeight * lemonVBRatio;
+
+lemonTree.style.top = products[0].offsetTop + lemonCtrHeight * topFromCtrFactor;
+console.log(lemonTree.style.top);
+
+let tlLemon = gsap.timeline({
+    scrollTrigger:{
+        trigger: products[0],
+        //markers:true,
+        start:'top center',
+        end:'bottom center',
+        toggleActions:'restart reverse restart reverse'
     }
-    else {
-        newImg.style.left = 0;
+});
+
+
+tlLemon.to(lemonTree,{
+    duration:2,
+    width:lemonTreeWidth,
+    ease:'power1.out'
+});
+
+tlLemon.to(".lemonLeaf",{
+    duration:0.25,
+    opacity:100,
+    ease:'bounce',
+    stagger:0.15
+});
+
+tlLemon.to(".lemonFruit",{
+    duration:0.25,
+    opacity:100,
+    ease:"elastic",
+    stagger:0.25
+},
+"-=0.75");
+
+const orangeTree = document.querySelector("#orangeTree");
+const orangeVB = orangeTree.viewBox.baseVal;
+const orangeVBRatio = orangeVB.width / orangeVB.height;
+const orangeCtrHeight = products[1].offsetHeight;
+const orangeTreeMaxHeight = orangeCtrHeight * bgImgMaxHeightFactor;
+const orangeTreeWidth = orangeTreeMaxHeight * orangeVBRatio;
+
+orangeTree.classList.add("bgImage");
+
+orangeTree.style.top = products[1].offsetTop + orangeCtrHeight * topFromCtrFactor;
+orangeTree.style.right=0;
+console.log(orangeTree.style.top);
+
+let tlOrange = gsap.timeline({
+    scrollTrigger:{
+        trigger: products[1],
+        //markers:true,
+        start:'top center',
+        end:'bottom center',
+        toggleActions:'restart reverse restart reverse'
     }
-    bgImage.push(newImg);
-}
+});
 
 
-function layoutBg() {
-    const bgIndexMax = products.length <= bgImage.length ? products.length : bgImage.length;
+tlOrange.to(orangeTree,{
+    duration:2,
+    width:orangeTreeWidth,
+    ease:'power1.out'
+});
 
-    for (i = 0; i < bgIndexMax; i++) {
+tlOrange.to(".orangeLeaf",{
+    duration:0.25,
+    opacity:100,
+    ease:'bounce',
+    stagger:0.15
+});
 
-        var currentProduct = products[i];
-        var prodHeight = currentProduct.offsetHeight;
-        var prodTop = currentProduct.offsetTop;
-        bgImage[i].style.height = (prodHeight) + "px";
-        bgImage[i].style.top = prodTop + "px";
-        if(i%2==0){
-            bgImage[i].style.transformOrigin = "bottom left";
-        }
-        else{
-            bgImage[i].style.transformOrigin ="bottom right";
-        }
-        bgArea.append(bgImage[i]);
+tlOrange.to(".orangeFruit",{
+    duration:0.25,
+    opacity:100,
+    ease:"elastic",
+    stagger:0.25
+},
+"-=0.25"); 
 
-        gsap.from(bgImage[i],{
-            duration:2,
-            scaleX:0,
-            ease:"power1.out",
-            scrollTrigger: {
-                trigger:products[i],
-                start:'top center',
-                end:'bottom center',
-                toggleActions:"restart reverse restart reverse"
-            },
-           
-        })
-    }
-
-}
-
-
-layoutBg();
-window.addEventListener("resize", layoutBg);
