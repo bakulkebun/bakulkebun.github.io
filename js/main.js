@@ -60,7 +60,7 @@ function backgroundAnimate() {
     const bgArea = document.querySelectorAll(".backgroundLayer")[0];
     const products = document.querySelectorAll(".productContainer");
     const lemonTree = document.querySelector("#lemonTree");
-
+    lemonTree.style.width=0;
 
     ///// CREATE BG ELEMENT //////////////////////////
     const bgImage = new Array();
@@ -116,6 +116,7 @@ function backgroundAnimate() {
         "-=0.75");
 
     const orangeTree = document.querySelector("#orangeTree");
+    orangeTree.style.width = 0;
     const orangeVB = orangeTree.viewBox.baseVal;
     const orangeVBRatio = orangeVB.width / orangeVB.height;
     const orangeCtrHeight = products[1].offsetHeight;
@@ -163,6 +164,7 @@ function backgroundAnimate() {
     //AVOCADO TREE
 
     const avocadoTree = document.querySelector("#avocadoTree");
+    avocadoTree.style.width=0;
     const avocadoVB = avocadoTree.viewBox.baseVal;
     const avocadoVBRatio = avocadoVB.width / avocadoVB.height;
     const avocadoCtrHeight = products[2].offsetHeight;
@@ -217,5 +219,7 @@ function backgroundAnimate() {
 
 }
 
-window.onload = backgroundAnimate;
+backgroundAnimate();
+
+window.addEventListener('resize',backgroundAnimate());
 
