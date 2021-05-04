@@ -221,7 +221,7 @@ function backgroundAnimate() {
 
 }
 
-backgroundAnimate();
+setTimeout(backgroundAnimate(),1000);
 
 window.addEventListener('resize',backgroundAnimate());
 
