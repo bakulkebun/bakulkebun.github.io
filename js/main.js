@@ -2,6 +2,8 @@ const contactButton = document.getElementById("contactButtonId");
 const contactGreeting = "Hallo,%20saya%20mau%20bertanya%20mengenai%20produk%20dari%20Bakul%20Kebun";
 const contactNumber = "628113023262";
 
+gsap.registerPlugin(ScrollTrigger);
+
 //open whatsapp for general queries
 contactButton.addEventListener('click', () => {
     window.open(`https://api.whatsapp.com/send?phone=${contactNumber}&text=${contactGreeting}`, '_blank');
@@ -85,12 +87,30 @@ function layoutBg() {
         var prodTop = currentProduct.offsetTop;
         bgImage[i].style.height = (prodHeight) + "px";
         bgImage[i].style.top = prodTop + "px";
-
+        if(i%2==0){
+            bgImage[i].style.transformOrigin = "bottom left";
+        }
+        else{
+            bgImage[i].style.transformOrigin ="bottom right";
+        }
         bgArea.append(bgImage[i]);
+
+        gsap.from(bgImage[i],{
+            duration:2,
+            scaleX:0,
+            ease:"power1.out",
+            scrollTrigger: {
+                trigger:products[i],
+                start:'top center',
+                end:'bottom center',
+                toggleActions:"restart reverse restart reverse"
+            },
+           
+        })
     }
 
 }
 
-layoutBg();
 
+layoutBg();
 window.addEventListener("resize", layoutBg);
