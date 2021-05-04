@@ -128,7 +128,7 @@ main {
 
 .label {
   font-weight: 100;
-  color: #dfdfdf;
+  color: #898989;
   text-align: right;
 }
 
@@ -257,7 +257,7 @@ footer {
   position: absolute;
   font-size: 0.85rem;
   font-weight: 50;
-  color: #dfdfdf;
+  color: #898989;
 }
 
 .disabledButton {
@@ -272,7 +272,7 @@ footer {
 
 a:visited, a:hover, a {
   text-decoration: none;
-  color: #dfdfdf;
+  color: #898989;
 }
 
 /*# sourceMappingURL=style.css.map */
