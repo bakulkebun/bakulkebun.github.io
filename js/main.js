@@ -17,7 +17,9 @@ const avocadoSession = [8, 9, 10, 11, 12, 1, 2]
 var currentDate = new Date();
 
 orderLemonButton.addEventListener("click", async () => {
-})
+
+    window.open(`https://www.tokopedia.com/frefa/10kg-lemon-california-hijau-jumbo-size-5-7-buah-kg`,'_blank');
+});
 
 
 
