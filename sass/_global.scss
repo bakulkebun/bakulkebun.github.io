@@ -287,3 +287,8 @@ footer {
   visibility: hidden;
   opacity: 0;
 }
+
+a:visited, a:hover, a {
+  text-decoration: none;
+  color:$primary-color-highlight;
+}
