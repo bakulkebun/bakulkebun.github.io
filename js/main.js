@@ -115,7 +115,6 @@ function backgroundAnimate() {
         let tlLemon = gsap.timeline({
             scrollTrigger: {
                 trigger: title[0],
-                markers: true,
                 start: 'top bottom',
                 end: 'top 20%',
                 toggleActions: 'restart reverse restart reverse'
@@ -151,7 +150,6 @@ function backgroundAnimate() {
         let tlOrange = gsap.timeline({
             scrollTrigger: {
                 trigger: title[1],
-                markers: true,
                 start: 'top bottom',
                 end: 'top 20%',
                 toggleActions: 'restart reverse restart reverse'
@@ -186,7 +184,6 @@ function backgroundAnimate() {
         let tlAvocado = gsap.timeline({
             scrollTrigger: {
                 trigger: title[2],
-                markers: true,
                 start: 'top bottom',
                 end: 'top 20%',
                 toggleActions: 'restart reverse restart reverse'
