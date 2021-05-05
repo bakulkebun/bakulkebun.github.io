@@ -1,0 +1,92 @@
+@import "variables";
+
+@media screen and (max-width: 700px) {
+  header {
+    height: auto;
+    width: 90%;
+    padding: 0;
+    margin: 1rem auto;
+  }
+  header > * {
+    margin-bottom: 1rem;
+  }
+  .logoContainer {
+    position: static;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  .headerTextContainer {
+    position: static;
+    width: 100%;
+    left: 0;
+    padding: 0;
+
+    h1 {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  .bigContactContainer {
+    position: static;
+    width: 100%;
+    .contactLabel {
+      font-size: 1rem;
+    }
+    .contactData {
+      font-size: 1.5rem;
+    }
+  }
+
+  .productContainer {
+    width: 90%;
+  }
+
+  .productGridContainer {
+    display: block;
+  }
+
+  .productDescContainer {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .productTitle {
+    text-shadow: 0.2rem -0.2rem yellow;
+    font-size: 1.7rem;
+  }
+  .productNarration {
+    font-size: 1rem;
+  }
+  .productNarration > p {
+    margin-top: 0.5rem;
+  }
+  .productSpecContainer {
+    display: block;
+    width: 95%;
+    height: 100%;
+    margin-bottom:1rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+  }
+  .data {
+    font-size: 1rem;
+  }
+
+  .detailedSpecContainer {
+    margin: 0.5rem 0;
+    row-gap: 0;
+    grid-template-columns: 0.75fr 1.25fr;
+  }
+
+  .orderButton{
+      position:relative;
+      width:100%;
+      bottom:0;
+  }
+}

@@ -2,6 +2,11 @@
 const contactButton = document.getElementById("contactButtonId");
 const contactGreeting = "Hallo,%20saya%20mau%20bertanya%20mengenai%20produk%20dari%20Bakul%20Kebun";
 const contactNumber = "628113023262";
+const windowWidth = window.innerWidth;
+const isMobileScreen = windowWidth < 720 ? true : false;
+
+console.log(isMobileScreen);
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +24,7 @@ var currentDate = new Date();
 
 orderLemonButton.addEventListener("click", async () => {
 
-    window.open(`https://www.tokopedia.com/frefa/10kg-lemon-california-hijau-jumbo-size-5-7-buah-kg`,'_blank');
+    window.open(`https://www.tokopedia.com/frefa/10kg-lemon-california-hijau-jumbo-size-5-7-buah-kg`, '_blank');
 });
 
 
@@ -59,170 +64,173 @@ function isAvocadoInSession() {
 
 function backgroundAnimate() {
 
-    ////// BACKGROUND IMAGE ANIMATION ///////////////////////////
-    const bgArea = document.querySelectorAll(".backgroundLayer")[0];
-    const products = document.querySelectorAll(".productContainer");
-    const lemonTree = document.querySelector("#lemonTree");
-    lemonTree.style.width=0;
+    if (isMobileScreen == true) { }
+    else {
 
-    ///// CREATE BG ELEMENT //////////////////////////
-    const bgImage = new Array();
+        ////// BACKGROUND IMAGE ANIMATION ///////////////////////////
+        const bgArea = document.querySelectorAll(".backgroundLayer")[0];
+        const products = document.querySelectorAll(".productContainer");
+        const lemonTree = document.querySelector("#lemonTree");
+        lemonTree.style.width = 0;
 
-    lemonTree.classList.add("bgImage");
+        ///// CREATE BG ELEMENT //////////////////////////
+        const bgImage = new Array();
 
-    //some register to console
-    const topFromCtrFactor = 0.2;
-    const bgImgMaxHeightFactor = 1 - 0.2;
+        lemonTree.classList.add("bgImage");
 
-    const lemonLeaf = document.querySelectorAll(".lemonLeaf");
+        //some register to console
+        const topFromCtrFactor = 0.2;
+        const bgImgMaxHeightFactor = 1 - 0.2;
 
-
-    const lemonVB = lemonTree.viewBox.baseVal;
-    const lemonVBRatio = lemonVB.width / lemonVB.height;
-    const lemonCtrHeight = products[0].offsetHeight;
-    const lemonTreeMaxHeight = lemonCtrHeight * bgImgMaxHeightFactor;
-    const lemonTreeWidth = lemonTreeMaxHeight * lemonVBRatio;
-
-    lemonTree.style.top = products[0].offsetTop + lemonCtrHeight * topFromCtrFactor;
-    console.log(lemonTree.style.top);
-
-    let tlLemon = gsap.timeline({
-        scrollTrigger: {
-            trigger: products[0],
-            //markers:true,
-            start: 'top center',
-            end: 'bottom center',
-            toggleActions: 'restart reverse restart reverse'
-        }
-    });
+        const lemonLeaf = document.querySelectorAll(".lemonLeaf");
 
 
-    tlLemon.to(lemonTree, {
-        duration: 2,
-        width: lemonTreeWidth,
-        ease: 'power1.out'
-    });
+        const lemonVB = lemonTree.viewBox.baseVal;
+        const lemonVBRatio = lemonVB.width / lemonVB.height;
+        const lemonCtrHeight = products[0].offsetHeight;
+        const lemonTreeMaxHeight = lemonCtrHeight * bgImgMaxHeightFactor;
+        const lemonTreeWidth = lemonTreeMaxHeight * lemonVBRatio;
 
-    tlLemon.to(".lemonLeaf", {
-        duration: 0.25,
-        opacity: 100,
-        ease: 'bounce',
-        stagger: 0.15
-    });
+        lemonTree.style.top = products[0].offsetTop + lemonCtrHeight * topFromCtrFactor;
+        console.log(lemonTree.style.top);
 
-    tlLemon.to(".lemonFruit", {
-        duration: 0.25,
-        opacity: 100,
-        ease: "elastic",
-        stagger: 0.25
-    },
-        "-=0.75");
-
-    const orangeTree = document.querySelector("#orangeTree");
-    orangeTree.style.width = 0;
-    const orangeVB = orangeTree.viewBox.baseVal;
-    const orangeVBRatio = orangeVB.width / orangeVB.height;
-    const orangeCtrHeight = products[1].offsetHeight;
-    const orangeTreeMaxHeight = orangeCtrHeight * bgImgMaxHeightFactor;
-    const orangeTreeWidth = orangeTreeMaxHeight * orangeVBRatio;
-
-    orangeTree.classList.add("bgImage");
-
-    orangeTree.style.top = products[1].offsetTop + orangeCtrHeight * topFromCtrFactor;
-    orangeTree.style.right = 0;
-    console.log(orangeTree.style.top);
-
-    let tlOrange = gsap.timeline({
-        scrollTrigger: {
-            trigger: products[1],
-            //markers:true,
-            start: 'top center',
-            end: 'bottom center',
-            toggleActions: 'restart reverse restart reverse'
-        }
-    });
+        let tlLemon = gsap.timeline({
+            scrollTrigger: {
+                trigger: products[0],
+                //markers:true,
+                start: 'top center',
+                end: 'bottom center',
+                toggleActions: 'restart reverse restart reverse'
+            }
+        });
 
 
-    tlOrange.to(orangeTree, {
-        duration: 2,
-        width: orangeTreeWidth,
-        ease: 'power1.out'
-    });
+        tlLemon.to(lemonTree, {
+            duration: 2,
+            width: lemonTreeWidth,
+            ease: 'power1.out'
+        });
 
-    tlOrange.to(".orangeLeaf", {
-        duration: 0.25,
-        opacity: 100,
-        ease: 'bounce',
-        stagger: 0.15
-    });
+        tlLemon.to(".lemonLeaf", {
+            duration: 0.25,
+            opacity: 100,
+            ease: 'bounce',
+            stagger: 0.15
+        });
 
-    tlOrange.to(".orangeFruit", {
-        duration: 0.25,
-        opacity: 100,
-        ease: "elastic",
-        stagger: 0.25
-    },
-        "-=0.25");
+        tlLemon.to(".lemonFruit", {
+            duration: 0.25,
+            opacity: 100,
+            ease: "elastic",
+            stagger: 0.25
+        },
+            "-=0.75");
 
-    //AVOCADO TREE
+        const orangeTree = document.querySelector("#orangeTree");
+        orangeTree.style.width = 0;
+        const orangeVB = orangeTree.viewBox.baseVal;
+        const orangeVBRatio = orangeVB.width / orangeVB.height;
+        const orangeCtrHeight = products[1].offsetHeight;
+        const orangeTreeMaxHeight = orangeCtrHeight * bgImgMaxHeightFactor;
+        const orangeTreeWidth = orangeTreeMaxHeight * orangeVBRatio;
 
-    const avocadoTree = document.querySelector("#avocadoTree");
-    avocadoTree.style.width=0;
-    const avocadoVB = avocadoTree.viewBox.baseVal;
-    const avocadoVBRatio = avocadoVB.width / avocadoVB.height;
-    const avocadoCtrHeight = products[2].offsetHeight;
-    const avocadoTreeMaxHeight = avocadoCtrHeight * bgImgMaxHeightFactor;
-    const avocadoTreeWidth = avocadoTreeMaxHeight * avocadoVBRatio;
+        orangeTree.classList.add("bgImage");
 
-    avocadoTree.classList.add("bgImage");
+        orangeTree.style.top = products[1].offsetTop + orangeCtrHeight * topFromCtrFactor;
+        orangeTree.style.right = 0;
+        console.log(orangeTree.style.top);
 
-    avocadoTree.style.top = products[2].offsetTop + avocadoCtrHeight * topFromCtrFactor;
-    avocadoTree.style.left = 0;
-
-    let tlAvocado = gsap.timeline({
-        scrollTrigger: {
-            trigger: products[2],
-            //markers:true,
-            start: 'top center',
-            end: 'bottom center',
-            toggleActions: 'restart reverse restart reverse'
-        }
-    });
-
-
-    tlAvocado.to(avocadoTree, {
-        duration: 2,
-        width: avocadoTreeWidth,
-        ease: 'power1.out'
-    });
-
-    tlAvocado.to(".avocadoLeaf", {
-        duration: 0.25,
-        opacity: 100,
-        ease: 'bounce',
-        stagger: 0.15
-    });
-
-    tlAvocado.to(".avocadoFruitBranch", {
-        duration: 0.25,
-        opacity: 100,
-        ease: 'bounce',
-    },
-        "-=0.25");
-
-    tlAvocado.to(".avocadoFruit", {
-        duration: 0.25,
-        opacity: 100,
-        ease: "elastic",
-        stagger: 0.25
-    },
-        "-=0.25");
+        let tlOrange = gsap.timeline({
+            scrollTrigger: {
+                trigger: products[1],
+                //markers:true,
+                start: 'top center',
+                end: 'bottom center',
+                toggleActions: 'restart reverse restart reverse'
+            }
+        });
 
 
+        tlOrange.to(orangeTree, {
+            duration: 2,
+            width: orangeTreeWidth,
+            ease: 'power1.out'
+        });
 
+        tlOrange.to(".orangeLeaf", {
+            duration: 0.25,
+            opacity: 100,
+            ease: 'bounce',
+            stagger: 0.15
+        });
+
+        tlOrange.to(".orangeFruit", {
+            duration: 0.25,
+            opacity: 100,
+            ease: "elastic",
+            stagger: 0.25
+        },
+            "-=0.25");
+
+        //AVOCADO TREE
+
+        const avocadoTree = document.querySelector("#avocadoTree");
+        avocadoTree.style.width = 0;
+        const avocadoVB = avocadoTree.viewBox.baseVal;
+        const avocadoVBRatio = avocadoVB.width / avocadoVB.height;
+        const avocadoCtrHeight = products[2].offsetHeight;
+        const avocadoTreeMaxHeight = avocadoCtrHeight * bgImgMaxHeightFactor;
+        const avocadoTreeWidth = avocadoTreeMaxHeight * avocadoVBRatio;
+
+        avocadoTree.classList.add("bgImage");
+
+        avocadoTree.style.top = products[2].offsetTop + avocadoCtrHeight * topFromCtrFactor;
+        avocadoTree.style.left = 0;
+
+        let tlAvocado = gsap.timeline({
+            scrollTrigger: {
+                trigger: products[2],
+                //markers:true,
+                start: 'top center',
+                end: 'bottom center',
+                toggleActions: 'restart reverse restart reverse'
+            }
+        });
+
+
+        tlAvocado.to(avocadoTree, {
+            duration: 2,
+            width: avocadoTreeWidth,
+            ease: 'power1.out'
+        });
+
+        tlAvocado.to(".avocadoLeaf", {
+            duration: 0.25,
+            opacity: 100,
+            ease: 'bounce',
+            stagger: 0.15
+        });
+
+        tlAvocado.to(".avocadoFruitBranch", {
+            duration: 0.25,
+            opacity: 100,
+            ease: 'bounce',
+        },
+            "-=0.25");
+
+        tlAvocado.to(".avocadoFruit", {
+            duration: 0.25,
+            opacity: 100,
+            ease: "elastic",
+            stagger: 0.25
+        },
+            "-=0.25");
+
+
+    }
 }
 
-setTimeout(backgroundAnimate(),2000);
+setTimeout(backgroundAnimate(), 2000);
 
-window.addEventListener('resize',backgroundAnimate());
+window.addEventListener('resize', backgroundAnimate());
 
