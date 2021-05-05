@@ -217,10 +217,6 @@ function backgroundAnimate() {
             stagger: 0.25
         },
             "-=0.75");
-
-
-        alert(`${lemonTree.style.top}\n${orangeTree.style.top}\n${avocadoTree.style.top}`);
-
     }
     else {
 
