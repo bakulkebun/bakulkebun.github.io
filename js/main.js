@@ -111,7 +111,6 @@ function backgroundAnimate() {
 
         //Animate Lemon
         lemonTree.style.top = title[0].offsetTop + products[0].offsetTop;
-
         let tlLemon = gsap.timeline({
             scrollTrigger: {
                 trigger: title[0],
@@ -220,7 +219,7 @@ function backgroundAnimate() {
             "-=0.75");
 
 
-
+        alert(`${lemonTree.style.top}\n${orangeTree.style.top}\n${avocadoTree.style.top}`);
 
     }
     else {
